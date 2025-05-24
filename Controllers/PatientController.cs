@@ -102,10 +102,10 @@ namespace CareNet_System.Controllers
             }
             //ViewBag.DeptList = DeptRepo.GetAll();
             //ViewBag.DoctorsList = StaffRepo.GetAll().Where(s => s.title == StaffTitle.Doctor).ToList();
-            // ✅ تعديل: تحويل قائمة الأقسام إلى SelectList
+           
             ViewBag.DeptList = new SelectList(DeptRepo.GetAll(), "Id", "name");
 
-            // ✅ تعديل: تحويل قائمة الأطباء إلى SelectList
+           
             ViewBag.DoctorsList = new SelectList(
                 StaffRepo.GetAll().Where(s => s.title == StaffTitle.Doctor).ToList(),
                 "Id", "name"
@@ -155,7 +155,7 @@ namespace CareNet_System.Controllers
             }
 
             //patientFromReq.Departments = DeptRepo.GetAll();
-            // ✅ تعديل: إعادة تحميل قائمة الأقسام والأطباء عند حدوث خطأ في التحديث
+            
             ViewBag.DeptList = DeptRepo.GetAll();
             ViewBag.DoctorsList = new SelectList(
                 StaffRepo.GetAll().Where(s => s.title == StaffTitle.Doctor).ToList(),
